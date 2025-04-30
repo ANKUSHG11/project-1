@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Designer / Freelancer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #102e50;
+    color: white;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 16px; /* 🔥 Yeh add kiya padding */
+    border-radius: 5px; /* 🔥 Rounded corners */
+    transition: 0.3s;   /* 🔥 Smooth hover effect */
+  }
+  
+  nav a:hover {
+    background: #f5c45e; /* 🟡 Yellow background on hover */
+    color: black; /* ✍️ Text color black on hover */
+  }
+  
+  /* Sections */
+  section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .about, .projects, .contact {
+    background: white;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Project Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Contact Section */
+  .contact-icons a {
+    display: inline-block;
+    background:#102e50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s; 
+  }
+  
+  .contact-icons a:hover {
+    background:#e78b48;;
+    color: black;
+  }
+  
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .popup img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  .popup:target {
+    display: block;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background:#102e50;
+    color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  footer a {
+    color: #f5c45e; /* Golden Yellow for footer links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  footer a:hover {
+    color:  #78b48b;
+    text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>MyPortfolio</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="about" id="about">
+  <h1>About Me</h1>
+  <p>I’m a passionate Designer & Freelancer. I create beautiful and functional designs that leave a lasting impression. Whether you need a personal brand or a professional portfolio, I deliver clean, responsive and effective designs that speak for themselves.</p>
+</section>
+
+<section class="projects" id="projects">
+  <h1>My Projects</h1>
+  <div class="grid">
+    <div class="card"><img src="cemra1.jpg" alt="Project 1" onclick="showPopup(this.src)"/></div>
+    <div class="card"><img src="cemra2.jpg" alt="Project 2" onclick="showPopup(this.src)"/></div>
+    <div class="card"><img src="cemera3.jpg" alt="Project 3" onclick="showPopup(this.src)"/></div>
+    <div class="card"><img src="cemra4.jpg" alt="Project 4" onclick="showPopup(this.src)"/></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h1>Contact Me</h1>
+  <p>Feel free to reach out for collaborations or just a friendly hello 👋</p>
+  <div class="contact-icons">
+    <a href="mailto:yourname@example.com">Email Me</a>
+    <a href="https://wa.me/919876543210" target="_blank">WhatsApp</a>
+  </div>
+</section>
+
+<div class="popup" id="popup" onclick="closePopup()">
+  <img src="" alt="popup image" id="popup-img" />
+</div>
+
+<footer>
+  © 2025 Your Name. All rights reserved.
+</footer>
+
+<script>
+  function showPopup(src) {
+    document.getElementById("popup-img").src = src;
+    document.getElementById("popup").classList.add("active");
+  }
+
+  function closePopup() {
+    document.getElementById("popup").classList.remove("active");
+  }
+</script>
+
+</body>
+</html>
